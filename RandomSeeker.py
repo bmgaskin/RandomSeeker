@@ -38,7 +38,7 @@ def random_seeker(my_num, max_loop_count, max_randon_number):
     print("\nSeeking for number: {:,}".format(my_num))
     now = datetime.datetime.now()
     start = time.time()
-    print("Start Time:", str(now))
+    print("Start Time:", now.strftime("%A, %x %I:%M:%S %p"))
     my_results = []
     loop_count = 1
     innerloop = 1
@@ -47,7 +47,7 @@ def random_seeker(my_num, max_loop_count, max_randon_number):
         x1 = random.randint(0, max_random_number)
         if x1 == my_num:
             now = datetime.datetime.now()
-            print("Loop Count:", loop_count, "Elapsed time in seconds: {0:.2f}".format(time.time() - start_time),
+            print("Pass Number:", loop_count, "Elapsed time in seconds: {0:.2f}".format(time.time() - start_time),
                   "[{:,}]".format(innerloop))
             my_results.append(innerloop)
             if loop_count == max_loop_count:
@@ -60,8 +60,9 @@ def random_seeker(my_num, max_loop_count, max_randon_number):
         else:
             innerloop += 1
     now = datetime.datetime.now()
-    print("End Time:", str(now))
-    print("\nTotal run time in seconds: {0:.2f}".format(time.time() - start))
+    print("End Time:", now.strftime("%A, %x %I:%M:%S %p"))
+    run_time = time.time() - start
+    print("\nTotal run time in seconds: {0:.2f}".format(run_time), "or {0:.2f} minutes.".format(run_time/60))
     my_mean = statistics.mean(my_results)
     print("Mean value:", "{:,}".format(int(my_mean)))
           
