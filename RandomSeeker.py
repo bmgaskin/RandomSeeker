@@ -1,14 +1,15 @@
 #
+# RandomSeeker
 # Billy Gaskin
-# Version 3.1 - October 17, 2019
+# Version 4 - October 17, 2019
 #
 
 
 def intro(max_count, max_randon_number):
 
-    print("**\n** RandomSeeker by Billy Gaskin - v3.1", "\n**\n")
+    print("**\n** RandomSeeker by Billy Gaskin - v4", "\n**\n")
     print("Display the [count] of how many times it takes to find the requested")
-    print("number as a random number (between 0 and {}) {} times...\n\n".format(max_random_number, max_count))
+    print("number as a random number (between 0 and {:,}) {} times...\n\n".format(max_random_number, max_count))
 
     while True:
         my_num = input("What number do you want to use, or q to quit?: ")
@@ -34,9 +35,10 @@ def random_seeker(my_num, max_loop_count, max_randon_number):
     import time
     import statistics
 
+    print("\nSeeking for number: {:,}".format(my_num))
     now = datetime.datetime.now()
     start = time.time()
-    print("\nStart Time:", str(now))
+    print("Start Time:", str(now))
     my_results = []
     loop_count = 1
     innerloop = 1
@@ -46,7 +48,7 @@ def random_seeker(my_num, max_loop_count, max_randon_number):
         if x1 == my_num:
             now = datetime.datetime.now()
             print("Loop Count:", loop_count, "Elapsed time in seconds: {0:.2f}".format(time.time() - start_time),
-                  "[{}]".format(innerloop))
+                  "[{:,}]".format(innerloop))
             my_results.append(innerloop)
             if loop_count == max_loop_count:
                 # print("\n",my_results)
@@ -61,7 +63,8 @@ def random_seeker(my_num, max_loop_count, max_randon_number):
     print("End Time:", str(now))
     print("\nTotal run time in seconds: {0:.2f}".format(time.time() - start))
     my_mean = statistics.mean(my_results)
-    print("Mean value:", int(my_mean))
+    print("Mean value:", "{:,}".format(int(my_mean)))
+          
     return
 
 
@@ -75,7 +78,7 @@ max_random_number: int = 10000000
 my_num = intro(max_loop_count, max_random_number)
 if my_num >= 0:
     random_seeker(my_num, max_loop_count, max_random_number)
-    input("Completed! Press Enter to quit...")
+    input("\nCompleted! Press Enter to quit...")
 
 # End of program...
 
