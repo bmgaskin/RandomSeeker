@@ -1,12 +1,12 @@
 #
 # Billy Gaskin
-# Version 3 - June 20, 2019
+# Version 3.1 - October 17, 2019
 #
 
 
 def intro(max_count, max_randon_number):
 
-    print("**\n** RandomSeeker by Billy Gaskin - v3", "\n**\n")
+    print("**\n** RandomSeeker by Billy Gaskin - v3.1", "\n**\n")
     print("Display the [count] of how many times it takes to find the requested")
     print("number as a random number (between 0 and {}) {} times...\n\n".format(max_random_number, max_count))
 
@@ -75,6 +75,7 @@ max_random_number: int = 10000000
 my_num = intro(max_loop_count, max_random_number)
 if my_num >= 0:
     random_seeker(my_num, max_loop_count, max_random_number)
+    input("Completed!  Press Enter to Quit...")
 
 # End of program...
 
