@@ -75,7 +75,7 @@ max_random_number: int = 10000000
 my_num = intro(max_loop_count, max_random_number)
 if my_num >= 0:
     random_seeker(my_num, max_loop_count, max_random_number)
-    input("Completed!  Press Enter to Quit...")
+    input("Completed! Press Enter to quit...")
 
 # End of program...
 
