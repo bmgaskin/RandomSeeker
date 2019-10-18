@@ -8,7 +8,7 @@
 def intro(max_count, max_randon_number):
 
     print("**\n** RandomSeeker by Billy Gaskin - v4", "\n**\n")
-    print("Display the [count] of how many times it takes to find the requested")
+    print("Display the [count] of how many attempts it takes to find the requested")
     print("number as a random number (between 0 and {:,}) {} times...\n\n".format(max_random_number, max_count))
 
     while True:
@@ -47,7 +47,7 @@ def random_seeker(my_num, max_loop_count, max_randon_number):
         x1 = random.randint(0, max_random_number)
         if x1 == my_num:
             now = datetime.datetime.now()
-            print("Pass Number:", loop_count, "Elapsed time in seconds: {0:.2f}".format(time.time() - start_time),
+            print("Pass #", loop_count, "Elapsed time in seconds: {0:.2f}".format(time.time() - start_time),
                   "[{:,}]".format(innerloop))
             my_results.append(innerloop)
             if loop_count == max_loop_count:
