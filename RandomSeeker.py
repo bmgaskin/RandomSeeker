@@ -1,11 +1,11 @@
 #
 # RandomSeeker
 # Billy Gaskin
-# Version 4 - October 17, 2019
+# Version 4 - October 18, 2019
 #
 
 
-def intro(max_count, max_randon_number):
+def intro(max_count, max_random_number):
 
     print("**\n** RandomSeeker by Billy Gaskin - v4", "\n**\n")
     print("Display the [count] of how many attempts it takes to find the requested")
@@ -28,7 +28,7 @@ def intro(max_count, max_randon_number):
     return -1
 
 
-def random_seeker(my_num, max_loop_count, max_randon_number):
+def random_seeker(my_num, max_loop_count, max_random_number):
 
     import random
     import datetime
