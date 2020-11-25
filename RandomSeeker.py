@@ -1,13 +1,12 @@
-#
 # RandomSeeker
-# Billy Gaskin
-# Version 4 - October 18, 2019
-#
-
+# Version: 4.1
+# Date: 18-OCT-2019
+# Developed by: Billy Gaskin
+# Gasware Enterprises
 
 def intro(max_count, max_random_number):
 
-    print("**\n** RandomSeeker by Billy Gaskin - v4", "\n**\n")
+    print("**\n** RandomSeeker", "\n**\n")
     print("Display the [count] of how many attempts it takes to find the requested")
     print("number as a random number (between 0 and {:,}) {} times...\n\n".format(max_random_number, max_count))
 
@@ -67,7 +66,6 @@ def random_seeker(my_num, max_loop_count, max_random_number):
     print("Mean value:", "{:,}".format(int(my_mean)))
           
     return
-
 
 #
 # Start Execution
