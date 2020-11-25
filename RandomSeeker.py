@@ -47,11 +47,11 @@ def random_seeker(my_num, max_loop_count, max_random_number):
         x1 = random.randint(0, max_random_number)
         if x1 == my_num:
             now = datetime.datetime.now()
-            print("Pass #", loop_count, "Elapsed time in seconds: {0:.2f}".format(time.time() - start_time),
-                  "[{:,}]".format(innerloop))
+            print("Pass #",loop_count, " Elapsed time in seconds: {0:.2f} ".format(time.time() - start_time),
+                  "[{:,}]".format(innerloop),sep='')
             my_results.append(innerloop)
             if loop_count == max_loop_count:
-                # print("\n",my_results)
+                #print("\n",my_results)
                 break
             else:
                 loop_count += 1
