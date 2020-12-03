@@ -2,7 +2,6 @@
 # Version: 4.1
 # Date: 18-OCT-2019
 # Developed by: Billy Gaskin
-# Gasware Enterprises
 
 def intro(max_count, max_random_number):
 
