@@ -3,11 +3,11 @@
 # Date: 18-OCT-2019
 # Developed by: Billy Gaskin
 
-def intro(max_count, max_random_number):
+def intro(max_loop_count, max_random_number):
 
     print("**\n** RandomSeeker", "\n**\n")
     print("Display the [count] of how many attempts it takes to find the requested")
-    print("number as a random number (between 0 and {:,}) {} times...\n\n".format(max_random_number, max_count))
+    print("number as a random number (between 0 and {:,}) {} times...\n\n".format(max_random_number, max_loop_count))
 
     while True:
         my_num = input("What number do you want to use, or q to quit?: ")
