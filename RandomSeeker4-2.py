@@ -1,5 +1,4 @@
 # RandomSeeker
-# Version: 4.2
 # Date: 27-DEC-2021
 # Developed by: Billy Gaskin
 
