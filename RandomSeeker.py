@@ -1,55 +1,53 @@
 # RandomSeeker
-# Version: 4.1
-# Date: 18-OCT-2019
-# Developed by: Billy Gaskin
+# Programmer: Billy Gaskin
 
-def intro(max_loop_count, max_random_number):
-
-    print("**\n** RandomSeeker", "\n**\n")
+def intro(iteration_count, max_random_number):
+    boarder = "*" * 20
+    print()
+    print(boarder)
+    print("**  RandomSeeker  **")
+    print(boarder,"\n")
     print("Display the [count] of how many attempts it takes to find the requested")
-    print("number as a random number (between 0 and {:,}) {} times...\n\n".format(max_random_number, max_loop_count))
+    print("number as a random number (from 0 to {:,}) {} times.\n".format(max_random_number, iteration_count))
 
     while True:
-        my_num = input("What number do you want to use, or q to quit?: ")
-        if my_num.upper() == "Q":
-            break
+        target_num = input("Enter your target number, or q to quit?: ")
+        if target_num.upper() == "Q":
+            return -1
         else:
             try:
-                my_num = int(my_num)
+                target_num = int(target_num)
             except ValueError:
-                print("Exiting due to invalid entry.")
-                break
-        if my_num < 0 or my_num > max_random_number:
+                print("Stopping due to invalid entry.")
+                return -1
+        if target_num < 0 or target_num > max_random_number:
             print("Error: The number requested is out of range.\n")
         else:
-            return(my_num)
-    return -1
-
-
-def random_seeker(my_num, max_loop_count, max_random_number):
+            return(target_num)
+    
+def random_seeker(target_num, iteration_count, max_random_number):
 
     import random
     import datetime
     import time
     import statistics
 
-    print("\nSeeking for number: {:,}".format(my_num))
+    print("\nSeeking for number: {:,}".format(target_num))
     now = datetime.datetime.now()
     start = time.time()
     print("Start Time:", now.strftime("%A, %x %I:%M:%S %p"))
-    my_results = []
+    the_results = []
     loop_count = 1
     innerloop = 1
     start_time = time.time()
     while True:
         x1 = random.randint(0, max_random_number)
-        if x1 == my_num:
+        if x1 == target_num:
             now = datetime.datetime.now()
             print("Pass #",loop_count, " Elapsed time in seconds: {0:.2f} ".format(time.time() - start_time),
                   "[{:,}]".format(innerloop),sep='')
-            my_results.append(innerloop)
-            if loop_count == max_loop_count:
-                #print("\n",my_results)
+            the_results.append(innerloop)
+            if loop_count == iteration_count:
                 break
             else:
                 loop_count += 1
@@ -61,22 +59,19 @@ def random_seeker(my_num, max_loop_count, max_random_number):
     print("End Time:", now.strftime("%A, %x %I:%M:%S %p"))
     run_time = time.time() - start
     print("\nTotal run time in seconds: {0:.2f}".format(run_time), "or {0:.2f} minutes.".format(run_time/60))
-    my_mean = statistics.mean(my_results)
-    print("Mean value:", "{:,}".format(int(my_mean)))
-          
+    the_mean = statistics.mean(the_results)
+    print("Mean value:", "{:,}".format(int(the_mean)))
     return
 
-#
-# Start Execution
-#
+def main(args=None):
+    iteration_count: int = 5
+    max_random_number: int = 10000000
+    target_num = intro(iteration_count, max_random_number) 
+    if target_num >= 0:
+        random_seeker(target_num, iteration_count, max_random_number)
+        input("\nCompleted! Press Enter to quit.")
+    print("Goodbye")
 
-max_loop_count: int = 5
-max_random_number: int = 10000000
-
-my_num = intro(max_loop_count, max_random_number)
-if my_num >= 0:
-    random_seeker(my_num, max_loop_count, max_random_number)
-    input("\nCompleted! Press Enter to quit...")
-
-# End of program...
+if __name__ == '__main__':
+    main()
 
